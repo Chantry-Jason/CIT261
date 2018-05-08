@@ -20,7 +20,7 @@
         <?php include $_SERVER['DOCUMENT_ROOT'] . '/cit261/modules/menu.php'; ?>
     </nav>
     <main>
-        <h3>Welcome to my CIT261 website. On this page I will demonstrate fluency in each of the 13 topics required in the course. These topics are as follows:</h3>
+        <h3>Welcome to my CIT261 website. On this page I will demonstrate fluency in each of the 13 topics required in the course. Click on the menu link to view each topic. These topics are as follows:</h3>
         <h4>Coding Topics</h4>
         <p>1. JavaScript – Loops, Conditional Statements, Functions, Arrays</p>
         <p>2. JavaScript – Object Creation Functions, Properties, Methods, Instantiation</p>

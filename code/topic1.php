@@ -25,9 +25,10 @@
         </ul>
     </nav>
     <main>
- 
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic1.php" id="gitHubLink">View Code on GitHub</a>
         <h3>Calculate total square footage of your home</h3>
         <h4>Please enter the length and width of your 2 bedroom, 1 bathroom home to calculate the total square footage:</h4>
+        <!-- Get user input -->
         <p>Living Room Length: <input type="number" id="len0"><br>
             Living Room Width: <input type="number" id="wid0"><br>
             Kitchen and Dining Room Length: <input type="number" id="len1"><br>
@@ -54,12 +55,12 @@
                 for (i=0; i<5; i++) {           
                     num1 = document.getElementById('len'+i).value;
                     num2 = document.getElementById('wid'+i).value;
-                    if (num1 == null) {
+                    if (num1 == null || num1 == "") {
                         alert("Oops, you must fill in all values, defaulted to 0.");
                         num1 = 0;
                         
                     }
-                    if (num2 == null) {
+                    if (num2 == null || num2 == "") {
                         alert("Oops, you must fill in all values, defaulted to 0.");
                         num2 = 0;
                         
@@ -88,6 +89,6 @@
 
     </main>
     <footer>
-    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://cit261.jasonchantry.pw>cit261.jasonchantry.pw</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
+    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://jasonchantry.pw/cit261>jasonchantry.pw/cit261</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
     </footer>
 </html>

@@ -96,6 +96,6 @@
         </script>
     </main>
     <footer>
-    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://cit261.jasonchantry.pw>cit261.jasonchantry.pw</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
+    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://jasonchantry.pw/cit261>jasonchantry.pw/cit261</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
     </footer>
 </html>
