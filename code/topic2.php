@@ -25,7 +25,7 @@
         </ul>
     </nav>
     <main>
- 
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic2.php" id="gitHubLink">View Code on GitHub</a>
         <h3>Pseudo Classical Instantination</h3>
         <!-- Buttons to display member data -->
         <button onclick="jason.printRecord();">Display Jason</button>
