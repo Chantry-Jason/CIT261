@@ -25,7 +25,7 @@
         </ul>
     </nav>
     <main>
-        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic2.php" id="gitHubLink">View Code on GitHub</a>
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic3.php" id="gitHubLink">View Code on GitHub</a>
         <h3>JavaScript Object Notation (JSON) </h3>
         <p>Enter the information below. Then click the 'Stringify and Parse It' button to see the results of the two stringify and parse methods.</p>
         <p>
