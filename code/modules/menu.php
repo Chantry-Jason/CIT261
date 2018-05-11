@@ -4,6 +4,7 @@
             
             <li><a  href="topic1.php">Topic 1</a></li>
             <li><a  href="topic2.php">Topic 2</a></li>
+            <li><a  href="topic3.php">Topic 3</a></li>
         </ul>
      <!--script and JQuery for dropdown mobile menu -->
      <script type="text/javascript">
