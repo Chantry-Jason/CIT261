@@ -1,3 +1,7 @@
+//Jason Chantry 5/18/18
+//use key to connect and get data from weatherunderground api for weather forcasting.
+//use ajax to consume json api
+
 $(function () {
 
 	var status = $('#status');

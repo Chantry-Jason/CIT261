@@ -25,7 +25,9 @@
         </ul>
     </nav>
     <main>
-        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic4.php" id="gitHubLink">View Code on GitHub</a>
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic4.php" id="gitHubLink">View topic4.php Code on GitHub</a>
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/scripts/weatherinfo.js" id="gitHubLink">View weatherinfo.js Code on GitHub</a>
+        
         <section class="weather-container">
 				<!--Display Loading text while data is being retrieved-->
                 <div id="cover">
