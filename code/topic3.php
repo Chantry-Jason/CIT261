@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> CIT261:02 - Topic 3, Javascript </title>
         <link rel="stylesheet" href="css/subpagesmain.css">  
-        <
+        
     
     </head>
     <header class="header">
