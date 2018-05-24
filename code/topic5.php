@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Jason Chantry">
+	    <meta name="description" content="Code for Topic 4 in CIT261">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT261:02 - Topic 3, Javascript </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Topic 5 </h1>
+        <h2>Local Storage Storing and Retrieving Arrays, Associative Arrays, and Objects</h2>
+        <h2>Jason Chantry - Group 6</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.php">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic5.php" id="gitHubLink">View topic5.php Code on GitHub</a><br>
+        <h3>Array and Object Data to be Stored to Local Storage</h3>
+        <p id="preOutput"></p>
+        <br>
+        <h3>Array and Object Data read back from local Storage</h3>
+        <p id="postOutput"></p>
+        
+        <script>
+            //Load arrays
+            var array1 = [1, 2, 3, 4, 5, 6];
+            var object1 = {"name": 'jason', 
+                            "email": 'jason.chantry@gmail.com',
+                            "food": 'pizza',
+                            "degree": 'No Degree',
+                            "degreeName": 'n/a'};
+            document.getElementById("preOutput").innerHTML = JSON.stringify(array1) + "<br>" + JSON.stringify(object1);
+            
+            //write array and object to local storage using localSorage.setItem and JSON.stringify
+            localStorage.setItem("locArray1", JSON.stringify(array1));
+            localStorage.setItem("locObject1", JSON.stringify(object1));
+            
+            //Read array and object back from local storage using localstorage.getItem and JSON.parse
+            var arrayReadback = JSON.parse(localStorage.getItem("locArray1"));
+            var objectReadback = JSON.parse(localStorage.getItem("locObject1"));
+            //output the data read back from local storage to the screen. stringify to display them as characters
+            document.getElementById("postOutput").innerHTML = JSON.stringify(arrayReadback) + "<br>" + JSON.stringify(objectReadback) + "<br>" + "Retrieve 'food' from object and display: " + objectReadback.food;
+            
+            
+            
+            
+            
+        </script>
+
+        
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://jasonchantry.pw/cit261>jasonchantry.pw/cit261</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
+    </footer>
+</html>
