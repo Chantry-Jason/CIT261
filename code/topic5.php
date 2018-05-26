@@ -6,7 +6,7 @@
 	    <meta name="author" content="Jason Chantry">
 	    <meta name="description" content="Code for Topic 4 in CIT261">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title> CIT261:02 - Topic 3, Javascript </title>
+        <title> CIT261:02 - Topic 5, Javascript </title>
         <link rel="stylesheet" href="css/subpagesmain.css">  
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     
