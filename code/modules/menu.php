@@ -8,6 +8,7 @@
             <li><a  href="https://jasonchantry.pw/cit261/topic4.php">Topic 4</a></li>
             <li><a  href="topic5.php">Topic 5</a></li>
             <li><a  href="topic6.php">Topic 6</a></li>
+            <li><a  href="topic7.php">Topic 7</a></li>
         </ul>
      <!--script and JQuery for dropdown mobile menu -->
      <script type="text/javascript">

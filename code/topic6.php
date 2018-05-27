@@ -26,7 +26,7 @@
     </nav>
     <main>
         
-        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic6.php" id="gitHubLink">View topic5.php Code on GitHub</a><br>
+        <a href = "https://github.com/Chantry-Jason/CIT261/blob/master/code/topic6.php" id="gitHubLink">View topic6.php Code on GitHub</a><br>
         <div id="startQuestion">
 
             <h3>Select your political offiliation</h3>
