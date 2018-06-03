@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title> CIT261:02 - JChantry's Site </title>
         <link rel="stylesheet" href="css/main.css">  
-        <script                     src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
     </head>
     <header class="header">
         <img  src="images/byui2.jpg" alt="Logo" >
@@ -17,7 +17,29 @@
         
     </header>
     <nav class="page-nav">
-        <?php include $_SERVER['DOCUMENT_ROOT'] . '/cit261/modules/menu.php'; ?>
+        <ul class="topnav" id="nav">
+            <li><a class="active" href="http://jasonchantry.pw/cit261">Home</a></li>
+            
+            <li><a  href="topic1.html">Topic 1</a></li>
+            <li><a  href="topic2.html">Topic 2</a></li>
+            <li><a  href="topic3.html">Topic 3</a></li>
+            <li><a  href="https://jasonchantry.pw/cit261/topic4.html">Topic 4</a></li>
+            <li><a  href="topic5.html">Topic 5</a></li>
+            <li><a  href="topic6.html">Topic 6</a></li>
+            <li><a  href="topic7.html">Topic 7</a></li>
+        </ul>
+     <!--script and JQuery for dropdown mobile menu -->
+     <script type="text/javascript">
+        $("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+	    $("#menu").click(function(){
+		   $("#nav").toggle();
+	    });
+	    $(window).resize(function(){
+	       if(window.innerWidth > 500) {
+	          $("#nav").removeAttr("style");
+	       }
+	    });      
+    </script>
     </nav>
     <main>
         <h3>Welcome to my CIT261 website. On this page I will demonstrate fluency in each of the 13 topics required in the course. Click on the menu link to view each topic. These topics are as follows:</h3>
