@@ -50,7 +50,7 @@
         </ul>
     </nav>
     <main>
-        <p>***This page will work on mobile only. It uses touch, not click commands. Please view on your mobile device or in emulation mode in your desktop browser***</p>
+        
         <h2>HTML5 Tag &lt;canvas&gt;</h2>
         <p>The rectangle below is a canvas tag with a border around it. Shapes can be drawn inside the cnavas tag using javascript.</p>
         <canvas id="drawing_window">
@@ -74,9 +74,9 @@
             <source src="video/small.flv" type="video/flv">
         </video> <br>
         <p id="playStatus">Video Stopped</p> <br>
-        <button ontouchstart="startVid();">Play/Pause</button>
-        <button ontouchstart="bigVid();">Large Screen</button>
-        <button ontouchstart="smallVid();">Small Screen</button>
+        <button onclick="startVid();">Play/Pause</button>
+        <button onclick="bigVid();">Large Screen</button>
+        <button onclick="smallVid();">Small Screen</button>
         <h2>HTML5 Tag &lt;audio&gt;</h2>
         <p>The audio track below have the 'controls' selected to display the play controls. Start to hear the relaxing ocean.</p> 
         <audio id="demoAud" controls>
