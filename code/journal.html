@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     	<meta charset="utf-8"> 
+	    <meta name="author" content="Jason Chantry">
+	    <meta name="description" content="Journal for Jason Chantry - Course: CIT261:02">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title> CIT261:02 - Journal for Jason Chantry </title>
+        <link rel="stylesheet" href="css/subpagesmain.css">  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    
+    </head>
+    <header class="header">
+        
+        <h1 >CIT261:02 - Course Journal </h1>
+        <h2>Thoughts and things I learned during the CIT261 course</h2>
+        <h2>Jason Chantry - Group 6</h2>
+        
+    </header>
+    <nav>
+        <ul class="topnav">
+            <li><a  href="index.php">Home</a></li>
+
+        </ul>
+    </nav>
+    <main>
+        <h2>In Progress...</h2>
+        <h2 id="050318">May 3, 2018</h2>    
+        <p>Had to set up brackets, XAMPP and FireZilla on my new computer to connect to my website. My version of brackets was very outdated. Installed v13. I created a new sub-domain on my site called cit261 to put all of my code into. Started working on a home page for the course.</p>
+        <p>Created group schedule and my personal schedule for the course. Met two of my team members in our first meeting. The others we have not heard from. We divied out topics for us each to teach. </p>
+        <p>I started working on my code for topic #1. This part of Javascript I remember fairly well, just needed a few reminders. After applying css styling I put that into it’s own file and referenced it in my code. <xmp>(<link rel="stylesheet" href="css/subpagesmain.css">)</xmp></p>
+        <h2 id="050418">May 4, 2018</h2>
+        <p>Continued working on code for topic 1. I used an array to keep the calculations for area in, used for loops and if statements to look for null entries. I also used two functions to show I knew how to call and use them. </p>
+        <p>I remembered that the instructor said he would be viewing this via mobile so I added css styling to change style for different screen sizes. That took a little bit.</p>
+        <a href="https://chantry-jason.github.io/CIT261/code/topic1.html">See Code for topic 1 here</a>
+        <p>Worked on my lesson material (power point) to teach topic #1 to my group next week.</p>
+        <h2 id="050518">May 5, 2018</h2>
+        <p>Started working on topic 2 which Is to create object functions, properties, methods and instantiation. I did not remember learning this in my previous courses. So, I learned what I could from w3Schools, Daily JS, and my brother Scott who is a JS programmer. </p>
+        <p>I learned there are many different types of instantiation. I coded two types, prototypal and pseudo classical. It took me awhile reading up on these in order to understand them. I first copied some code to step through to gain a better understanding of what was happening for each type. I was finally able to write my own code for both. I am not an expert at this yet, but I feel I got a pretty good basic understanding. I will use this more as the course goes on to gain a working knowledge of the code.</p>
+        <p>I definitely like the pseudo classical approach much better. It is easier to understand and code. It is fairly quick to program the function, objects, properties, and methods. </p>
+        <p>I can see the value in using instantiation to assign user data to objects quickly. These then can be recorded to disk or a database faster than separate variables or arrays.</p>
+        <p>Here is the code I used for this approach:</p>
+        <a href="https://chantry-jason.github.io/CIT261/code/topic2.html">See code for topic 2 here</a>
+        <xmp>
+        <h3>Pseudo Classical Instantination</h3>
+        <!-- Buttons to display member data -->
+        <button onclick="jason.printRecord();">Display Jason</button>
+        <button onclick="ken.printRecord();">Display Ken</button>
+        <!--Paragraph to display response data on screen-->
+        <p id="response"></p>
+        
+        <script>
+            //example of pseudo classical instantiation.
+            //Define member as function
+            var member = function(name, age, address, phone, email){
+                
+                this.name = name;
+                this.age = age;
+                this.address = address;
+                this.phone = phone;
+                this.email = email;
+            };
+            //create new printRecord member of 'member' function which will display data in the 'response' paragraph above
+            member.prototype.printRecord = function(){
+                //display data onto screen in the 'response' paragraph
+                document.getElementById("response").innerHTML = "Member Name: " + this.name + "<br>" + "Age: " + this.age + "<br>" + "Address: " + this.address + "<br>" + "Phone Number: " + this.phone + "<br>" + "E-Mail: " + this.email;
+            };
+
+            //create new objects
+            var jason = new member("Jason Chantry", 41, "1232 5th St. Ogden, UT 84404", "8011234567", "jason.chantry@gmail.com");
+            var ken = new member("Ken Futch", 37, "45 Meadowbrook Dr. Ontario, CA 91764", "9099845339", "ken.futch@gmail.com");
+        </script>
+        </xmp>
+        <h2 id="050818">May 8, 2018</h2>
+        <p>I taught my lesson on Javascript – Loops, Conditional Statements, Functions, and arrays. This was a great refresher course for me as well. Most of these topics I remembered, but some I needed to  look up. There is no better way to learn than by teaching someone else.</p>
+        <p>Click the link below to watch my lesson. The video will start as i explain what Bro. Baer told us about how to submit topics and other things. My lesson will follow.</p>
+        <iframe  src="https://www.youtube.com/embed/ABsPieCRCww?rel=0&amp;start=838" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        
+        <h2 id="051418">May 14, 2018</h2>
+        <p>Topic 3 - I asked the user to input some information. When the user clicks the button, I assign these values to an object called student. I declare a new string and use the JSON.stringify method on the student object. This converts the object into a string. </p>
+        <p>I then print the string to the screen.</p>
+        <p>The next step I declare a new object and run the JSON.parse method on the string above. This coverts the string back into an object. I then display the object on the screen.</p>
+        <p>Submitted code</p>
+        <a href="https://chantry-jason.github.io/CIT261/code/topic3.html">See code in action here</a>
+        
+        <h2 id="051818">May 18, 2018</h2>
+        <p>Submitted topic 4, using ajax to consume a web API. I used weatherunderground to read in weather data for the users local area. I used navigator.geolocation.getcurrentposition to get the users latitude and longitude and assign them to variables. I then created a function called getData inputting the two lat and long variables. I use this data and create a jquery document containing the ajax results from weatherunderground. I used  </p>
+        <xmp><p>
+            jQuery(document).ready(function($) {$.ajax({ 
+            and set the url to 
+            url : "https://api.wunderground.com/api/987360510eace1b9/geolookup/conditions/q/" + lat + "," + long + ".json",
+            dataType : "jsonp",
+            </p>
+        </xmp>
+        <p>I then could read in the data for temperature, location, feelslike temp, humidity, etc and print it to the screen. </p>
+        <p>It is awesome that I can get this kind of data from different API’s that people have created.</p>
+        
+        <a href="https://chantry-jason.github.io/CIT261/code/topic4.html">See code in action here</a>  
+        
+        
+        <h2 id="052418">May 24, 2018</h2>
+        <p>I wrote the code for topic #5. I feel I am getting a little behind and need to speed things up. I used the localStorage.setItem method to save an array and an object into local memory. I needed to JSON.stringify the data to store it.</p>
+        
+        <p>I then read the data back using the localStorage.getItem method and JSON.parsed the data back into an array and object. When printing the data to the screen, I needed to stringify the data to print correctly, otherwise the object prints as [Object: object]. I also printed a single entry of the object to the screen to show that it was stored and retrieved correctly. </p>
+        <p>Submitted for Grading</p>
+        
+        <a href="https://chantry-jason.github.io/CIT261/code/topic5.html">See code in action here</a>          
+        <p>I need to finish topic #6 so I can work on my lesson for next week. Going fast now, the semester is almost half way done. </p>
+        
+        <h2 id="052618">May 26, 2018</h2>
+        <p>I completed topic #6, DOM manipulation using createElement, appendChild, insertBefore, etc. </p>
+        
+        <p>I created a simple question if someone is a republican or a democrat. There are two buttons for the user to press. </p>
+        <p>If the user presses the republican button, I add a 'p' element and two 'button' elements with text for all three using .createElement, .createTextNode, and .appendChild. I disable the two original buttons and append the new elements to the div with the id of 'additionalElements'. A statement is printed and the user is given two more options. When one is selected, another ,p. element is created and text is inserted. </p>
+        <p>The same is for the democrat button but with different text.</p>
+        <p>This is useful to add html code to pages depending on what the user is looking for. This keeps the code for the page small and easy to load. I wonder however, how much benefit there really is because I still need to code it in javascript to add the code in html. I guess it is nice because I can change code in javascript and do it according to what the user has selected. I see the benefit.</p>
+        <p>It is nice to be able to create text and assign it to a variable and then assign that variable to an element for it’s button name, text inside a p or div, etc. This will greatly reduce code. I enjoyed the assignment and felt it went smoothly. I didn’t have to look up much on this topic.</p>
+        
+        
+        <a href="https://chantry-jason.github.io/CIT261/code/topic6.html">See code in action here</a>         
+        
+        <h2 id="052718">May 27, 2018</h2>
+        <p>submitted topic #7, manipulating css using javascript. This was a fun exercise that got me thinking again about what I had learned several semesters ago. I used getElementsByClassName to assign the class object to a variable. I had difficulty with assigning stylings to that variable until I looked up and remembered that the function returns an array of all objects it can find. In my case there is only one, but that meant I needed to loop through the array until I reached the end. I couldn't simply say:</p>
+        
+        <p>variableWithClassName.style.bordercolor = "forestgreen"; </p>
+        <p>I needed to create a for loop: </p>
+        <xmp>for(i=0; i<classToMod.length; i++) {classToMod[i].style.borderColor = "forestgreen";}</p></xmp>
+            
+        
+        <p>this would loop through all instances of the class name and assign the styling to all of them. Again, in my case it was only one so i could have simply said classToMod[1].style.borderColor = "forestgreen"; but decided to loop. The loop method allows me to add the styling inline which will override the styling I specified in my general style section.</p>
+        
+        
+        <a href="https://chantry-jason.github.io/CIT261/code/topic7.html">See code in action here</a>     
+        
+        <h2 id="053018">May 30, 2018</h2>
+        <p>I taught the lesson on topic 7: Manipulating CSS Class Properties Using JavaScript. The link to this vide can be found below:</p>
+        <iframe  src="https://www.youtube.com/embed/momdsT2k7O8?rel=0&amp;start=20" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        
+        
+        <h2 id="060318">June 3, 2018</h2>
+        <p>Finished code for topic 8: CSS3 transitions and animations and triggering them using javascript. this was a fun little exercise. I created a few different examples. The last one I spent the most time on. It is a map of middle earth with a Frodo character. Using the buttons on the bottom of the map, the user can move Frodo to different locations on the map. I am using css keyframes and triggering them with javascript using style.cssText with animation-name and  animation-duration. I set it up for IE, chrome, and safari using webkit.</p>
+        
+        <p>The other examples I included the use of .addEventListener, createElement, cssText, transition:, and a few others. </p>
+        <a href="https://chantry-jason.github.io/CIT261/code/topic8.html">See code in action here</a>
+        
+        <h2 id="060618">June 6, 2018</h2>
+        <p>Tonight was our team meeting. I was the lead tonight. I started with discussing github pages and lead the discussion about how to set a site up. We discussed other needs as well. I then had DJ and Ryan give their lessons on topic 9 and 10. </p>
+        <p>Below is the video of our meeting.</p>
+        <iframe  src="https://www.youtube.com/embed/WbtOdztvuxk?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <h2 id="061318">June 13, 2018</h2>
+        <p>Today I researched CSS3 Transforms and wrote a lesson to present to my group tonight. Transforms use transitions to function but allow the prorgammer to manipulate elements by rotating, skewing, scaling, translating, and transorming by origin them. This allows us to create more complex animations in 2D and 3D.</p>
+        
+            
+        
+    </main>
+    <footer>
+    	<p class="obj_Ctr"> CIT 261:02 I <a href=http://jasonchantry.pw/cit261>jasonchantry.pw/cit261</a> I &copy; 2018 Jason Chantry. All Rights Reserved. </p>
+    </footer>
+</html>
