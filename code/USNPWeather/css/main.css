@@ -1,0 +1,224 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    background-image: url("../images/header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    top: 0;
+}
+
+.header {
+    top: 0px;
+    height: 60px;
+    position: fixed;
+    width: 100%;
+    overflow: hidden;
+    background-color: darkgreen;
+}
+
+.header h1 {
+    position: absolute;
+    left: 10px;
+    top: 5px;
+    font-size: 20px;
+}
+.header h2 {
+    position: absolute;
+    left: 10px;
+    top: 30px;
+    font-size: 14px;
+}
+.page-nav {
+	background-color: rgb(245,191,69);
+	position: fixed;
+    top: 60px;
+	left: 0px;
+	width: 100%;
+
+}
+
+.page-nav select{
+    background-color: darkgreen;
+    color: sandybrown;
+    font-size: 14px;
+    left: 2%;
+    margin: 5px;
+    
+    height: 30px;
+    margin-left: 10px;
+    
+}
+#park {
+    width: 65%;
+}
+#state {
+    width: 20%;
+}
+
+.main {
+    
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+#locDisplay {
+    text-align: center;
+    
+}
+#cover {
+    text-align: center;
+}
+.footer {
+    position: fixed;
+    font-size: 12px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(245,191,69);
+    
+    border-top: 2px solid darkgreen;
+    width: 100%;
+}
+
+           #topRowRight {
+                text-align: center;
+
+            }
+
+.SummaryText{
+    text-align: center;
+    color: black;
+    font-size: 22px;
+    position: absolute;
+    top: 215px;
+    right: 50px;
+    text-shadow: 0 0 3px orange;
+}
+            
+
+            .HiLoBox {
+              
+                height: 90px;
+                margin-top: 5px;
+                flex-grow: 1;
+                padding: 0px 0px;
+                font-family: verdana; 
+                text-align: center;
+                text-shadow: 0 0 3px orange;
+                
+            }
+            section.HiLoBox p {
+                font-size: 22pt;
+                text-align: center;
+                color: black;
+                line-height: 0;
+            }
+            section.HiLoBox h3 {
+                 
+                text-align: center; 
+                font-size: 12pt;
+                line-height: 0;
+                color: black;
+                
+            }
+            .DateBox {
+                
+                height: 50px;
+                margin-top: 5px;
+                color: black;
+                text-align: center;
+                flex-grow: 1;
+                text-shadow: 0 0 3px orange;
+                
+            }
+
+.OtherDataBox1 {
+    flex-grow: 1;
+    padding: 5px;
+    height: auto;
+    margin-top: 5px;
+    color: white;
+}
+.OtherDataBox1 p {
+    background-color: rgb(255,255,255, 0.6);
+    padding: 5px;
+    color: black;
+    font-size: 12pt;
+}
+
+section.HourlyDataBox h3{
+    line-height: 0;
+    font-size: 24px; 
+    color: black;
+    text-align: center;
+} 
+.HourlyDataBox {
+    width: 95%;
+    height: auto;
+    margin-left: 5px;
+    margin-right: 10px;
+   
+    color: black;
+    padding: 5px 5px 50px 5px;
+    font-size: 14pt;
+    background-color: rgb(255,255,255, 0.6);
+}
+/* Mobile view */   
+    
+    @media only screen and (max-width: 700px){    
+            main {
+                margin-left: 2px; 
+                margin-right: 2px;
+            }
+            div.locText {color: yellow; font-size: 1px; visibility: hidden;}  
+            div.otherCities { font-size: 1px; visibility: hidden;}
+            :root{--screenSize:small} /* Pass screensize variable to Javascript */
+ 
+ 
+             main {
+                display: flex;
+                flex-direction: column;
+            }
+            #topRowLeft {
+                display: flex;
+                flex-direction: column;
+                            
+                flex-grow: 2;
+            }
+
+            #topRowRight {
+                flex-grow: 1;
+                visibility: visible;
+            }
+            .SummaryIdAndImageSm {
+                display: flex;
+                flex-direction: row;
+                flex-grow: 1;
+            }
+            .SummaryIdAndImageLg{
+                display: none;
+                visibility: collapse;
+            }
+            #SummaryImg {
+                flex: 1;
+            }
+            .HiLoBox {
+                flex-grow: 1;
+            }
+
+
+         #topRowLeftL {
+                visibility: collapse;
+        }
+
+        .smTable{
+            border-collapse: collapse;
+            width: 98%;
+            text-align: center;
+        }
+        .smTableTr td{
+            padding: 2px 20px 2px 20px;
+        }
+        .smTableTr:nth-child(even) {background-color: green;}
+        
+    }
