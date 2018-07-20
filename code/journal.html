@@ -39,7 +39,13 @@
         <a href="#053018">May 30, 2018</a> |
         <a href="#060318">June 3, 2018</a> |
         <a href="#060618">June 6, 2018</a> |
+        <a href="#061318">June 13, 2018</a> |
         <a href="#061918">June 19, 2018</a> |
+        <a href="#062618">May 26, 2018</a> |
+        <a href="#071118">June 11, 2018</a> |
+        <a href="#071218">June 12, 2018</a> |
+        <a href="#071818">June 18, 2018</a> |
+        <a href="#071918">June 19, 2018</a> |
         <h2 id="050318">May 3, 2018</h2>    
         <p>Had to set up brackets, XAMPP and FireZilla on my new computer to connect to my website. My version of brackets was very outdated. Installed v13. I created a new sub-domain on my site called cit261 to put all of my code into. Started working on a home page for the course.</p>
         <p>Created group schedule and my personal schedule for the course. Met two of my team members in our first meeting. The others we have not heard from. We divied out topics for us each to teach. </p>
@@ -168,7 +174,147 @@
         <iframe src="https://www.youtube.com/embed/lDJr-MpC77E?start=514" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         <h2 id="061918">June 19, 2018</h2>
         <p>I completed topics 11 and 13 focusing on CSS3 transitions and animations. I hope everything is ok, so far I have gotten 100% on my other topics. I will now start thinking about a final project to get approved. I have no idea what to do! My tendency is to get myself in to something too big. Focus!! </p>
+        <h2 id="062618">June 26, 2018</h2>
+        <p>I have started on my final project. Bro. Baer approved my national park weather app for all of the national parks in the U.S.</p>
+        <p>I put in all of the content and started formatting with css. Very basic right now but I will work on the look later. I am more concerned about getting the weather data for every park in America.</p>
+        <p>I started pulling in data from weather underground but can't find where to get an hourly forecast. I currently have temperature, the summary (clear, cloudy, etc.), feelslike temp, humidity, wind, dew point, winddirection, and precipitation. read them in using the following code:</p>
+        <xmp>jQuery(document).ready(function($) {
+                    $.ajax({
+                        //get weatherunderground info from api using my key
+                        //url : "https://api.wunderground.com/api/987360510eace1b9/geolookup/conditions/q/" + lat + "," + long + ".json",
+                        url : "https://api.wunderground.com/api/987360510eace1b9/geolookup/conditions/q/" + state + "/" + park + "_Natl_Park" + ".json",
+                        dataType : "jsonp",
+                        success : function(data) {
+                            //write data to console for debug purposes
+                            console.log(data);
+                            //read in info
+                            var location = data.location.city + ", " + data.location.state ;
+                            //var temp_f = parsed_json['current_observation']['temp_f'];
+                            var currTemp = parseInt(data.current_observation.temp_f);
+                            var summary = data.current_observation.weather;
+                            var feelsLike = parseInt(data.current_observation.feelslike_f);
+                            var humidity = data.current_observation.relative_humidity;
+                            var windMph = data.current_observation.wind_mph;
+                            var dewPoint = parseInt(data.current_observation.dewpoint_f);
+                            var windDir = data.current_observation.wind_dir;
+                            var precipToday = data.current_observation.precip_today_in;
+                            var iconUrl = data.current_observation.forecast_url;
+        </xmp>
+        <p>I then outputted them to the screen using:</p>
+        <xmp>
+                            $("#locDisplay").text("Weather for: " + location);
+                            $("#currentTemp").html(currTemp  + "&#8457");
+                            $("#SummaryTextId").html(summary);
+                            $("#OtherDataField").html("<b>Feels Like: </b>" + feelsLike + "&#8457<br><b>Precipitation: </b>" + precipToday + " in. <br> <b>Wind: </b>" + windMph + " mph  " + windDir + "<br><b>Humidity: </b>" + humidity + "<br><b>Dew Point: </b>" + dewPoint + "&#8457");
+        </xmp>
+        <p>This outputs the text and variables to the tag with the designated id.</p>
+        
+         <h2 id="070118">July 1, 2018</h2>
+        <p>I was reading in the basic weather data using the 'conditions' site in weather underground. I found that I can retrieve a json file in the 'hourly' site and pull in data from the 'data.hourly_forecast' object. Wa hoo! I wrote the code below to assign data to variables. </p>
+        <xmp>
+        jQuery(document).ready(function($) {
+            $.ajax({
+                //get weatherunderground info from api using my key
+                url : "https://api.wunderground.com/api/987360510eace1b9/geolookup/hourly/q/" + state + "/" + park + "_Natl_Park" + ".json",
+                dataType : "jsonp",
+                success : function(data) {
+                    //write data to console for debug purposes
+                    console.log(data);
+                    //read in info
+                    var hourly = [];
+                    var hr = 0; var hrTemp = 0; var hrCondition = 0;
+                    var tempp = {};
+                    //add hour, condition, and temp data into an array for 24 hrs
+                    for (i=0; i<25; i++) {
+                        hr = data.hourly_forecast[i].FCTTIME.hour;
+                        hrTemp = parseInt(data.hourly_forecast[i].temp.english);
+                        hrCondition = data.hourly_forecast[i].icon;
+                        tempp = {hour: hr, temp: hrTemp, condition: hrCondition};
+                        hourly.push(tempp);
+                    }
+        </xmp>
+        
+        <p>The data was in an object that had sub objects for each hour past the curent time. I needed to get the current time, and then assign hours based on 0-24 representing 24 hrs in a day. I used the following for and if statements to sort this out. I also wanted to display the next days date if the hourly data passed into the following day, which is in most cases.</p>
+        <xmp>
+            var text = ""
+            var hourTime = ""
+            text = "<table class='smTable'>"
+            for (i = 0; i < Hourly.length; i++) { 
+                //convert hour of 0-23 to 12am - 11pm
+                if (hourly[i].hour == 0) {
+                    hourTime = "12am";
+                    //Add a line with tomorrows date
+                    var MonthNames = new Array("January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December");
+                    var today = new Date();
+
+                    var date = MonthNames[today.getMonth()] + " " + (parseInt(today.getDate()) + 1);
+                    today = today.getDay();
+                    var tomorrowDay = convDayOfWeek(parseInt(today) + 1);
+
+                    text += "<tr  class='smTableTr'><b>" + tomorrowDay + ", " + date + "</b></tr>";
+                }
+                else if (hourly[i].hour >= 1 && hourly[i].hour < 12) {hourTime = hourly[i].hour.toString() + "am";}
+                else if (hourly[i].hour == 12) {hourTime = "12pm";}
+                else {hourTime = (hourly[i].hour.toString() - 12) + "pm";}
+                //compile string
+                text += "<tr class='smTableTr'><td>" + hourTime + "</td>  <td>" + hourly[i].temp + "&#8457;</td><td>" + hourly[i].condition + "</td></tr>";
+            }
+        document.getElementById("HourlyDataId").innerHTML = "<h3>Hourly Forecast</h3>" + text + "</table>";       
+        </xmp>
+        
+        <h2 id="071218">July 12, 2018</h2>
+        <p>My site is coming along.  I have been working on getting the api information that I needed. I am using weather underground and it took me awhile to get everything importing in ok. </p>
+        <p>I currently have a static park coded, "Yellowstone National Park" in "Wyoming". It is pulling in data ok now. </p>
+        <p>I am currently working on getting my database of national parks entered in a separate .js file so I can load data for each park. </p>
+        <p>I will then work on the images for each weather condition (sunny, partly cloudy, cloudy, thunder storms, etc.) and display them depending on what condition is read in. Weather Underground has their own images that I could read in but I don't like them because they don't have a clear background.</p>
+        <p>I also will start working on some animation and such to make the user experience much better. I am toying around with adding doppler map data if I have time.</p>
+        <p>The link to the site is below.</p>
+        <a href="https://chantry-jason.github.io/CIT261/code/USNPWeather/index.html">https://chantry-jason.github.io/CIT261/code/USNPWeather/index.html</a>
+        
+        <h2 id="071818">July 18, 2018</h2>
+        <p>I am making good progress on the site. I got permission to limit the number of national parks because weather underground is not consistant with their location text. Some are 'Yellowstont_Natl_Park', others are 'Yellowstone_National_Park' and others are 'Yellowstone'. The inconsistancy is frustrating. So I will only put a few parks in different states so show functionality.  </p>
+        <p>I added the 'displayIcon()' function to look at the time of day and the summary to determine which weather icon to display. Getting variables from JQuery out to JS proves difficult so I just passed them into the function. Those variables are 'summary' and 'hourly'. hourly contains all of the hourly forecast data. I will look at the data in the first index point to determine the next hour. </p>
+        <p>If it is between 7am and 9pm we will consider it day, otherwise it will be night. I am only displaying a few icons. Instead of cloudy, partly cloudy, mostly cloudy, etc. I will look for 'Cloudy' in the summary and display a generic cloudy icon. for each condition I update the source of the image on the main screen to the appropriate icon.</p>
+        
             
+        <h2 id="071918">July 19, 2018</h2>
+        <p>Added two event listeners to my site that fade the content out and back in when location is changed. These will execute JavaScript to modify the transitions on the main tag using opacity. See code below:  </p>
+        <xmp>
+//figure out which transitionEnd listener to use by using all of them on a created element and see which one doesn't return undefined.
+function transEventEnd(){
+    var tr;
+    var elem = document.createElement('tempElement');
+    var transListener = {
+        'transition':'transitionend',
+        'OTransition':'oTransitionEnd',
+        'MozTransition':'transitionend',
+        'WebkitTransition':'webkitTransitionEnd'                   
+    }
+    for (tr in transListener){
+        if (elem.style[tr] !== undefined){
+            return transListener[tr];
+        }
+    }
+}
+function refreshData() {
+    var transEnd = transEventEnd();
+    var elementId = document.getElementById("mainDisp");
+    elementId.addEventListener(transEnd, DoUpdate, false);
+    elementId.style.cssText = "-webkit-transition: opacity 1s; transition: opacity 1s; opacity: 0; ";
+    function DoUpdate() {
+        
+        var currState = document.getElementById('state').value;
+        var currPark = document.getElementById('park').value;
+        getData(currState, currPark);
+        showDisp();
+    }
+    elementId.addEventListener(transEnd, showDisp, false);
+    function showDisp() {
+        elementId.style.cssText = "-webkit-transition: opacity 2s; transition: opacity 2s; opacity: 1;";
+    }
+
+}
+        </xmp>
         
     </main>
     <footer>
