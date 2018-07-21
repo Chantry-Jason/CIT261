@@ -119,7 +119,9 @@ $(function () {
 
                             var date = MonthNames[today.getMonth()] + " " + (parseInt(today.getDate()) + 1);
                             today = today.getDay();
-                            var tomorrowDay = convDayOfWeek(parseInt(today) + 1);
+                            var tomorrow = parseInt(today) + 1;
+                            if (tomorrow === 7) {tomorrow = 0};
+                            var tomorrowDay = convDayOfWeek(tomorrow);
 
                             text += "<tr  class='smTableTr'><th colspan='3'>" + tomorrowDay + ", " + date + "</th></tr>";
                         }
@@ -195,7 +197,28 @@ function refreshData() {
     function showDisp() {
         elementId.style.cssText = "-webkit-transition: opacity 2s; transition: opacity 2s; opacity: 1;";
     }
-
+    var currPark = document.getElementById('park').value;    
+    var parkInfo;
+    if (currPark.includes("Denali")) {
+        parkInfo = "Denali is six million acres of wild land, bisected by one ribbon of road. Travelers along it see the relatively low-elevation taiga forest give way to high alpine tundra and snowy mountains, culminating in North America's tallest peak, 20,310' Denali. Wild animals large and small roam un-fenced lands, living as they have for ages. Solitude, tranquility and wilderness await.";
+    } else if (currPark.includes("Kenai")) {
+        parkInfo = "At the edge of the Kenai Peninsula lies a land where the ice age lingers. Nearly 40 glaciers flow from the Harding Icefield, Kenai Fjords' crowning feature. Wildlife thrives in icy waters and lush forests around this vast expanse of ice. Sugpiaq people relied on these resources to nurture a life entwined with the sea. Today, shrinking glaciers bear witness to the effects of our changing climate.";
+    } else if (currPark.includes("Wrangell")) {
+        parkInfo = "Wrangell St. Elias is a vast national park that rises from the ocean all the way up to 18,008 ft. At 13.2 million acres, the park is the same size as Yellowstone National Park, Yosemite National Park, and Switzerland combined! Within this wild landscape, people continue to live off the land as they have done for centuries. This rugged, beautiful land is filled with opportunities for adventure.";
+    } else if (currPark.includes("Yosemite")) {
+        parkInfo = "Not just a great valley, but a shrine to human foresight, the strength of granite, the power of glaciers, the persistence of life, and the tranquility of the High Sierra. First protected in 1864, Yosemite National Park is best known for its waterfalls, but within its nearly 1,200 square miles, you can find deep valleys, grand meadows, ancient giant sequoias, a vast wilderness area, and much more.";
+    } else if (currPark.includes("Sequioa")) {
+        parkInfo = "This dramatic landscape testifies to nature's size, beauty, and diversity--huge mountains, rugged foothills, deep canyons, vast caverns, and the world's largest trees. These two parks lie side by side in the southern Sierra Nevada east of the San Joaquin Valley. Weather varies a lot by season and elevation, which ranges from 1,370' to 14,494'.";
+    } else if (currPark.includes("Canyonlands")) {
+        parkInfo = "Canyonlands invites you to explore a wilderness of countless canyons and fantastically formed buttes carved by the Colorado River and its tributaries. Rivers divide the park into four districts: Island in the Sky, The Needles, The Maze, and the rivers themselves. These areas share a primitive desert atmosphere, but each offers different opportunities for sightseeing and adventure.";
+    } else if (currPark.includes("Moab")) {
+        parkInfo = "Visit Arches to discover a landscape of contrasting colors, land forms and textures unlike any other in the world. The park has over 2,000 natural stone arches, in addition to hundreds of soaring pinnacles, massive fins and giant balanced rocks. This red-rock wonderland will amaze you with its formations, refresh you with its trails, and inspire you with its sunsets.";
+    } else if (currPark.includes("Yellowstone")) {
+        parkInfo = "Visit Yellowstone and experience the world's first national park. Marvel at a volcano’s hidden power rising up in colorful hot springs, mudpots, and geysers. Explore mountains, forests, and lakes to watch wildlife and witness the drama of the natural world unfold. Discover the history that led to the conservation of our national treasures “for the benefit and enjoyment of the people.”";
+    } else  {
+        parkInfo = "No Info Available.";
+    }
+    document.getElementById('infoPopUp').innerHTML = "<p>" + parkInfo + "</p>";
 }
 
 function displayIcon(summary, hourly) {

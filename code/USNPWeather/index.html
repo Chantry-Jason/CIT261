@@ -27,20 +27,16 @@
             
         </script>
         <header class="header" id="pageHeader">
-
+            <img src="images/nps.png">
             <h1 >U.S. National Parks Weather </h1>
             <!--<h2>Select park below</h2>-->
             
             
         </header>
         <nav class="page-nav">
-            <select onchange="loadParks()" name="states" id="state">
-
-            </select>    
+            <select onchange="loadParks()" name="states" id="state"></select>    
             
-            <select onchange="refreshData()" name="parks" id="park">
-                <option value="Current">Current Location</option>
-            </select>
+            <select onchange="refreshData()" name="parks" id="park"></select>
             
             
             
@@ -99,12 +95,25 @@
             <p id="OtherDataField">
 
             </p>
+            <img src="images/info.png" id="infoImg" ontouchstart="expandPopUp">
+            <div id="infoPopUp">
+                
+            </div>
         </section>
+        <script>
+            var el = document.getElementById('infoImg');
+            el.ontouchstart = expandPopUp;
+            el.ontouchend = collapsePopUp;
+            function expandPopUp() {
+                document.getElementById("infoPopUp").style.cssText = "animation-name: expandPopUp; animation-duration: 1s;  -webkit-animation-name: expandPopUp; -webkit-animation-duration: 1s ; ";    
+            }
+            function collapsePopUp() {
+                document.getElementById("infoPopUp").style.cssText = "animation-name: collapsePopUp; animation-duration: 1s;  -webkit-animation-name: collapsePopUp; -webkit-animation-duration: 1s ; ";    
+            }
+            
+        </script>
         <section id="HourlyDataId" class="HourlyDataBox">
 
-            
-
- 
         </section>  
         
 
@@ -114,6 +123,7 @@
             <h2>We're Sorry!</h2>
             <p>This site is for mobile screens only. Please visit us on your mobile device!</p>
         </div>
+
         <footer class="footer">
             <p class="obj_Ctr"> U.S. National Parks Weather I <a    href=http://jasonchantry.pw/cit261>Home</a> I &copy; 2018 Jason Chantry. All Rights Reserved.   </p>
         </footer>
