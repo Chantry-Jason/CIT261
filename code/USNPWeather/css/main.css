@@ -95,7 +95,7 @@ body, html {
 }
 .footer {
     position: fixed;
-    font-size: 12px;
+    font-size: 11px;
     bottom: 0;
     left: 0;
     background-color: rgb(245,191,69);
@@ -165,20 +165,22 @@ section.HiLoBox h3 {
     margin-top: 5px;
     color: white;
     position: inherit;
+    text-shadow: 0 0 3px darkgreen;
 }
 .OtherDataBox1 p {
-    background-color: rgb(255,255,255, 0.6);
+    /*background-color: rgb(255,255,255, 0.6);*/
     padding: 5px;
-    color: black;
-    font-size: 12pt;
-    
+    color: white;
+    font-size: 14pt;
+    text-shadow: 0 0 3px darkgreen;
 }
 
 section.HourlyDataBox h3{
     line-height: 0;
     font-size: 24px; 
-    color: black;
+    color: white;
     text-align: center;
+    text-shadow: 0 0 3px darkgreen;
 } 
 .HourlyDataBox {
     width: 95%;
@@ -186,10 +188,11 @@ section.HourlyDataBox h3{
     margin-left: 5px;
     margin-right: 10px;
    
-    color: black;
+    color: white;
     padding: 5px 5px 50px 5px;
     font-size: 12pt;
-    background-color: rgb(255,255,255, 0.6);
+    text-shadow: 0 0 3px darkgreen;
+    /*background-color: rgb(255,255,255, 0.6);*/
 }
  
 

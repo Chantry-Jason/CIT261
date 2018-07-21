@@ -102,8 +102,18 @@
         </section>
         <script>
             var el = document.getElementById('infoImg');
-            el.ontouchstart = expandPopUp;
-            el.ontouchend = collapsePopUp;
+            var popUpOut = false;
+            el.ontouchstart = function () {
+                if (popUpOut === false) {
+                    popUpOut=true; 
+                    expandPopUp();
+                } else if (popUpOut === true) {
+                    popUpOut=false; 
+                    collapsePopUp();
+                }
+            }
+                
+
             function expandPopUp() {
                 document.getElementById("infoPopUp").style.cssText = "animation-name: expandPopUp; animation-duration: 1s;  -webkit-animation-name: expandPopUp; -webkit-animation-duration: 1s ; ";    
             }
@@ -125,7 +135,7 @@
         </div>
 
         <footer class="footer">
-            <p class="obj_Ctr"> U.S. National Parks Weather I <a    href=http://jasonchantry.pw/cit261>Home</a> I &copy; 2018 Jason Chantry. All Rights Reserved.   </p>
+            <p class="obj_Ctr"> U.S. National Parks Weather I <a    href=https://chantry-jason.github.io/CIT261/code/USNPWeather/index.html>Home</a> I &copy; 2018 Jason Chantry. All Rights Reserved.   </p>
         </footer>
     </body>
 </html>
